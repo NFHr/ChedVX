@@ -148,10 +148,6 @@
     <Compile Include="Plugins\ShiftEvent.cs" />
     <Compile Include="Plugins\SusExportPlugin.cs" />
     <Compile Include="UI\Helpers.cs" />
-    <Compile Include="UI\NoteView.Member.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="UI\NoteView.UI.cs" />
     <Compile Include="UI\Shortcuts\Commands.cs" />
     <Compile Include="UI\Shortcuts\KeyExtensions.cs" />
     <Compile Include="UI\Shortcuts\ShortcutCommandSource.cs" />

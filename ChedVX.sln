@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChedVX.Core", "ChedVX.Core\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChedVX.Plugins", "ChedVX.Plugins\ChedVX.Plugins.csproj", "{BD335AFA-195D-4C2A-986A-167438C81976}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChedVX.Audio", "ChedVX.Audio\ChedVX.Audio.csproj", "{5A65531C-92AC-4000-8807-3ED4E5C3F8BA}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,14 +51,6 @@ Global
 		{BD335AFA-195D-4C2A-986A-167438C81976}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BD335AFA-195D-4C2A-986A-167438C81976}.Release|x86.ActiveCfg = Release|Any CPU
 		{BD335AFA-195D-4C2A-986A-167438C81976}.Release|x86.Build.0 = Release|Any CPU
-		{5A65531C-92AC-4000-8807-3ED4E5C3F8BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5A65531C-92AC-4000-8807-3ED4E5C3F8BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5A65531C-92AC-4000-8807-3ED4E5C3F8BA}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{5A65531C-92AC-4000-8807-3ED4E5C3F8BA}.Debug|x86.Build.0 = Debug|Any CPU
-		{5A65531C-92AC-4000-8807-3ED4E5C3F8BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5A65531C-92AC-4000-8807-3ED4E5C3F8BA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5A65531C-92AC-4000-8807-3ED4E5C3F8BA}.Release|x86.ActiveCfg = Release|Any CPU
-		{5A65531C-92AC-4000-8807-3ED4E5C3F8BA}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
