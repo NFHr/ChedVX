@@ -57,18 +57,27 @@ namespace ChedVX.Core
 
         public IEnumerable<NoteBase> GetChips()
         {
-            return FXs.Cast<NoteBase>().Concat(BTs).Where(note => note.IsChip()); ;
+            return FXs.Cast<NoteBase>().Concat(BTs).Where(note => note.IsChip); ;
         }
 
+        public IEnumerable<NoteBase> GetLongs()
+        {
+            return FXs.Cast<NoteBase>().Concat(BTs).Where(note => !note.IsChip); ;
+        }
 
-        public IEnumerable<NoteBase> GetNotes()
+        public IEnumerable<NoteBase> GetLasers()
+        {
+            return Lasers.Cast<NoteBase>();
+        }
+
+        public IEnumerable<NoteBase> GetAllNotes()
         {
             return FXs.Cast<NoteBase>().Concat(BTs);
         }
 
         public void UpdateTicksPerBeat(double factor)
         {
-            foreach (var note in GetNotes())
+            foreach (var note in GetAllNotes())
             {
                 note.StartTick = (int)(note.StartTick * factor);
                 note.Duration = (int)(note.Duration * factor);

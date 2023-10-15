@@ -1,4 +1,5 @@
-﻿using ChedVX.Core.Notes;
+﻿using ChedVX.Core.Effects;
+using ChedVX.Core.Notes;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -11,40 +12,40 @@ namespace ChedVX.Drawing
 {
     public static class NoteGraphics
     {
-        public static void DrawBT(this DrawingContext dc, RectangleF rect, bool isFX)
+        public static void DrawBTChip(this DrawingContext dc, RectangleF rect, bool hasEffect)
         {
-            if (isFX)
+            if (hasEffect)
                 dc.Graphics.DrawNote(rect, dc.ColorProfile.FXBTColor, dc.ColorProfile.FXBTBorderColor);
             else
                 dc.Graphics.DrawNote(rect, dc.ColorProfile.BTColor, dc.ColorProfile.BTBorderColor);
         }
 
-        public static void DrawChip(this DrawingContext dc, RectangleF rect, bool isFX)
+        public static void DrawFXChip(this DrawingContext dc, RectangleF rect, bool hasEffect)
         {
-            if (isFX)
+            if (hasEffect)
                 dc.Graphics.DrawNote(rect, dc.ColorProfile.FXChipColor, dc.ColorProfile.FXChipBorderColor);
             else
                 dc.Graphics.DrawNote(rect, dc.ColorProfile.ChipColor, dc.ColorProfile.ChipBorderColor);
         }
 
-        public static void DrawBTLong(this DrawingContext dc, RectangleF rect, bool isFX)
+        public static void DrawBTLong(this DrawingContext dc, RectangleF rect, bool hasEffect)
         {
-            if (isFX)
+            if (hasEffect)
                 dc.Graphics.DrawNote(rect, dc.ColorProfile.FXBTLongColor, dc.ColorProfile.FXBTLongBorderColor);
             else
                 dc.Graphics.DrawNote(rect, dc.ColorProfile.BTLongColor, dc.ColorProfile.BTLongBorderColor);
         }
 
-        public static void DrawFXLong(this DrawingContext dc, RectangleF rect)
+        public static void DrawFXLong(this DrawingContext dc, RectangleF rect, EffectBase effect)
         {
             dc.Graphics.DrawNote(rect, dc.ColorProfile.FXLongColor, dc.ColorProfile.FXLongBorderColor);
         }
 
-    
+
 
         public static void DrawLaserBegin(this DrawingContext dc, IEnumerable<SlideStepElement> steps, IEnumerable<float> visibleSteps, float noteHeight)
         {
-            
+
         }
 
         /// <summary>

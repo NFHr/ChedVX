@@ -1,22 +1,21 @@
-﻿using System;
+﻿using ChedVX.Core;
+using ChedVX.Core.Notes;
+using ConcurrentPriorityQueue;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-using ConcurrentPriorityQueue;
-using ChedVX.Core;
-using ChedVX.Core.Notes;
 
 namespace ChedVX.Components.Exporter
 {
     public class SusExporter
     {
-        /*
+   
         protected ScoreBook ScoreBook { get; }
         protected BarIndexCalculator BarIndexCalculator { get; }
         protected int StandardBarTick => ScoreBook.Score.TicksPerBeat * 4;
@@ -32,6 +31,7 @@ namespace ChedVX.Components.Exporter
 
         public void Export(Stream stream)
         {
+            /*
             var book = ScoreBook;
             SusArgs args = CustomArgs;
             var notes = book.Score.Notes;
@@ -223,6 +223,7 @@ namespace ChedVX.Components.Exporter
                     });
                 WriteLinesWithOffset(writer, airActions);
             }
+            */
         }
 
         protected void WriteLinesWithOffset(TextWriter writer, IEnumerable<SusDataLine> items)
@@ -468,6 +469,5 @@ namespace ChedVX.Components.Exporter
             [Description("WORLD'S END")]
             WorldsEnd
         }
-                */
     }
 }

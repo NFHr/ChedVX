@@ -5,7 +5,6 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using static ChedVX.Core.Constants;
-using ChedVX.Core.Easing;
 
 namespace ChedVX.Core.Notes
 {
@@ -17,7 +16,7 @@ namespace ChedVX.Core.Notes
         [Newtonsoft.Json.JsonProperty]
         private float endPosition;
         [Newtonsoft.Json.JsonProperty]
-        private EasingBase lineEasing;
+        private Easing lineEasing;
         [Newtonsoft.Json.JsonProperty]
         private int scale;
 
@@ -61,7 +60,7 @@ namespace ChedVX.Core.Notes
         /// <summary>
         /// Set the Shape of the laser note.
         /// </summary>
-        public EasingBase LineEasing
+        public Easing LineEasing
         {
             get => lineEasing;
             set => lineEasing = value;

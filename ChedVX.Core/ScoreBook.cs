@@ -37,17 +37,11 @@ namespace ChedVX.Core
         [Newtonsoft.Json.JsonProperty]
         private string illustrator = "";
         [Newtonsoft.Json.JsonProperty]
+        private string bpm = "";
+        [Newtonsoft.Json.JsonProperty]
         private uint volume = 0;
         [Newtonsoft.Json.JsonProperty]
-        private uint bpm_max = 0;
-        [Newtonsoft.Json.JsonProperty]
-        private uint bpm_min = 0;
-        [Newtonsoft.Json.JsonProperty]
-        private uint distDate = 0;
-        [Newtonsoft.Json.JsonProperty]
         private uint level = 0;
-        [Newtonsoft.Json.JsonProperty]
-        private uint backgroundID = 0;
         [Newtonsoft.Json.JsonProperty]
         private Score score = new Score();
         [Newtonsoft.Json.JsonProperty]
@@ -111,31 +105,14 @@ namespace ChedVX.Core
         }
 
         /// <summary>
-        /// Set the min bpm.
+        /// Set the display bpm.
         /// </summary>
-        public uint BPM_MIN
+        public string BPM
         {
-            get { return bpm_min; }
-            set { bpm_min = value; }
+            get { return bpm; }
+            set { bpm = value; }
         }
 
-        /// <summary>
-        /// Set the max bpm.
-        /// </summary>
-        public uint BPM_MAX
-        {
-            get { return bpm_max; }
-            set { bpm_max = value; }
-        }
-
-        /// <summary>
-        /// Set the distributed date.
-        /// </summary>
-        public uint DistDate
-        {
-            get { return distDate; }
-            set { distDate = value; }
-        }
 
         /// <summary>
         /// Set the level number.
@@ -144,14 +121,6 @@ namespace ChedVX.Core
         {
             get { return level; }
             set { level = value; }
-        }
-        /// <summary>
-        /// Set the BackgroundID.
-        /// </summary>
-        public uint BackgroundID
-        {
-            get { return backgroundID; }
-            set { backgroundID = value; }
         }
 
         /// <summary>

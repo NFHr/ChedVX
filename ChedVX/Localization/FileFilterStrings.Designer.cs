@@ -39,7 +39,7 @@ namespace ChedVX.Localization {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Ched.Localization.FileFilterStrings", typeof(FileFilterStrings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ChedVX.Localization.FileFilterStrings", typeof(FileFilterStrings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

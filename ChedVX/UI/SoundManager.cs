@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Un4seen.Bass.AddOn.Fx;
 using Un4seen.Bass;
+using Un4seen.Bass.AddOn.Fx;
 
 namespace ChedVX.UI
 {
@@ -14,7 +14,7 @@ namespace ChedVX.UI
         readonly HashSet<SYNCPROC> syncProcs = new HashSet<SYNCPROC>();
         readonly Dictionary<string, Queue<int>> handles = new Dictionary<string, Queue<int>>();
         readonly Dictionary<string, double> durations = new Dictionary<string, double>();
-        
+
         public bool IsSupported { get; private set; } = true;
 
         public event EventHandler ExceptionThrown;

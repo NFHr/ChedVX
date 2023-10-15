@@ -12,10 +12,10 @@ namespace ChedVX.Core
 
         public enum Easing
         {
+            Normal,
             Linear,
             SineIn,
-            SineOut,
-            Beizier
+            SineOut
         };
 
         public enum Tracks

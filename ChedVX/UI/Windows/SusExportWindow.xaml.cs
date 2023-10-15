@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using Microsoft.Xaml.Behaviors;
 
 namespace ChedVX.UI.Windows
 {
@@ -33,7 +34,7 @@ namespace ChedVX.UI.Windows
 
         public string Title => ScoreBook.Title;
         public string Artist => ScoreBook.ArtistName;
-        public string NotesDesigner => ScoreBook.NotesDesignerName;
+        public string NotesDesigner => ScoreBook.Effector;
 
         private SusArgs.Difficulty difficulty;
         public SusArgs.Difficulty Difficulty
@@ -171,5 +172,6 @@ namespace ChedVX.UI.Windows
 
     public class SusDifficultySourceProvider : EnumSourceProvider<SusArgs.Difficulty>
     {
+ 
     }
 }

@@ -70,7 +70,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.39\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.19\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -148,6 +148,12 @@
     <Compile Include="Plugins\ShiftEvent.cs" />
     <Compile Include="Plugins\SusExportPlugin.cs" />
     <Compile Include="UI\Helpers.cs" />
+    <Compile Include="UI\NoteView.Event.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\NoteView.Paint.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UI\Shortcuts\Commands.cs" />
     <Compile Include="UI\Shortcuts\KeyExtensions.cs" />
     <Compile Include="UI\Shortcuts\ShortcutCommandSource.cs" />
@@ -422,8 +428,8 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UI\Windows\DiagnosticsWindow.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="UI\Windows\ShortcutSettingsWindow.xaml">
       <SubType>Designer</SubType>

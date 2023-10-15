@@ -1,13 +1,12 @@
-﻿using System;
+﻿using ChedVX.Components.Exporter;
+using ChedVX.UI.Windows;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-using Newtonsoft.Json;
-using ChedVX.Components.Exporter;
-using ChedVX.UI.Windows;
 
 namespace ChedVX.Plugins
 {

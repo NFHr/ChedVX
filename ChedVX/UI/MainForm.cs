@@ -89,7 +89,7 @@ namespace ChedVX.UI
                 Dock = DockStyle.Fill,
                 UnitBeatHeight = ApplicationSettings.Default.UnitBeatHeight,
                 UnitLaneWidth = ApplicationSettings.Default.UnitLaneWidth,
-                InsertAirWithAirAction = ApplicationSettings.Default.InsertAirWithAirAction
+                // InsertAirWithAirAction = ApplicationSettings.Default.InsertAirWithAirAction
             };
 
             PreviewManager = new SoundPreviewManager(this);
@@ -193,7 +193,7 @@ namespace ChedVX.UI
                 this.Controls.Add(MainMenuStrip);
             }
 
-            NoteView.NewNoteType = NoteType.Tap;
+            NoteView.NewNoteType = NoteType.FXChip;
             NoteView.EditMode = EditMode.Edit;
 
             LoadEmptyBook();
@@ -552,6 +552,7 @@ namespace ChedVX.UI
 
             commandSource.RegisterCommand(Commands.SwitchScorePreviewMode, MainFormStrings.ScorePreview, () => IsPreviewMode = !IsPreviewMode);
 
+            /*
             commandSource.RegisterCommand(Commands.WidenLaneWidth, MainFormStrings.WidenLaneWidth, () =>
             {
                 if (!CanWidenLaneWidth) return;
@@ -564,7 +565,7 @@ namespace ChedVX.UI
                 NoteView.UnitLaneWidth -= 4;
                 ApplicationSettings.Default.UnitLaneWidth = NoteView.UnitLaneWidth;
             });
-
+            */
             commandSource.RegisterCommand(Commands.InsertBpmChange, "BPM", () =>
             {
                 var form = new BpmSelectionForm()
@@ -649,6 +650,7 @@ namespace ChedVX.UI
                 UpdateThumbHeight();
             });
 
+            /*
             commandSource.RegisterCommand(Commands.SelectTap, "TAP", () => NoteView.NewNoteType = NoteType.Tap);
             commandSource.RegisterCommand(Commands.SelectExTap, "ExTAP", () => NoteView.NewNoteType = NoteType.ExTap);
             commandSource.RegisterCommand(Commands.SelectHold, "HOLD", () => NoteView.NewNoteType = NoteType.Hold);
@@ -713,6 +715,7 @@ namespace ChedVX.UI
                 }
                 throw new ArgumentException();
             }
+                    */
         }
 
         private void ConfigureKeyboardShortcut()
@@ -782,17 +785,18 @@ namespace ChedVX.UI
             var removeSelectedNotesItem = shortcutItemBuilder.BuildItem(Commands.RemoveSelectedNotes, MainFormStrings.RemoveSelectedNotes);
             var removeEventsItem = shortcutItemBuilder.BuildItem(Commands.RemoveSelectedEvents, MainFormStrings.RemoveEvents);
 
-            var insertAirWithAirActionItem = new ToolStripMenuItem(MainFormStrings.InsertAirWithAirAction, null, (s, e) =>
-            {
-                var item = s as ToolStripMenuItem;
-                item.Checked = !item.Checked;
-                NoteView.InsertAirWithAirAction = item.Checked;
-                ApplicationSettings.Default.InsertAirWithAirAction = item.Checked;
-            })
-            {
-                Checked = ApplicationSettings.Default.InsertAirWithAirAction
-            };
-
+            /*
+        var insertAirWithAirActionItem = new ToolStripMenuItem(MainFormStrings.InsertAirWithAirAction, null, (s, e) =>
+        {
+            var item = s as ToolStripMenuItem;
+            item.Checked = !item.Checked;
+            NoteView.InsertAirWithAirAction = item.Checked;
+            ApplicationSettings.Default.InsertAirWithAirAction = item.Checked;
+        })
+        {
+            Checked = ApplicationSettings.Default.InsertAirWithAirAction
+        };
+            */
             var pluginItems = PluginManager.ScorePlugins.Select(p => new ToolStripMenuItem(p.DisplayName, null, (s, e) =>
             {
                 CommitChanges();
@@ -824,27 +828,28 @@ namespace ChedVX.UI
                 cutItem, copyItem, pasteItem, pasteFlippedItem, new ToolStripSeparator(),
                 selectAllItem, selectToEndItem, selectoToBeginningItem, new ToolStripSeparator(),
                 flipSelectedNotesItem, removeSelectedNotesItem, removeEventsItem, new ToolStripSeparator(),
-                insertAirWithAirActionItem, new ToolStripSeparator(),
+                // insertAirWithAirActionItem, new ToolStripSeparator(),
                 pluginItem
             };
 
             var viewModeItem = shortcutItemBuilder.BuildItem(Commands.SwitchScorePreviewMode, MainFormStrings.ScorePreview);
             PreviewModeChanged += (s, e) => viewModeItem.Checked = IsPreviewMode;
 
-            var widenLaneWidthMenuItem = shortcutItemBuilder.BuildItem(Commands.WidenLaneWidth, MainFormStrings.WidenLaneWidth);
-            var narrowLaneWidthMenuItem = shortcutItemBuilder.BuildItem(Commands.NarrowLaneWidth, MainFormStrings.NarrowLaneWidth);
+
+            // var widenLaneWidthMenuItem = shortcutItemBuilder.BuildItem(Commands.WidenLaneWidth, MainFormStrings.WidenLaneWidth);
+            // var narrowLaneWidthMenuItem = shortcutItemBuilder.BuildItem(Commands.NarrowLaneWidth, MainFormStrings.NarrowLaneWidth);
 
             NoteView.UnitLaneWidthChanged += (s, e) =>
             {
-                widenLaneWidthMenuItem.Enabled = CanWidenLaneWidth;
-                narrowLaneWidthMenuItem.Enabled = CanNarrowLaneWidth;
+                // widenLaneWidthMenuItem.Enabled = CanWidenLaneWidth;
+                // narrowLaneWidthMenuItem.Enabled = CanNarrowLaneWidth;
             };
 
             var viewMenuItems = new ToolStripItem[]
             {
                 viewModeItem,
                 new ToolStripSeparator(),
-                widenLaneWidthMenuItem, narrowLaneWidthMenuItem
+                // widenLaneWidthMenuItem, narrowLaneWidthMenuItem
             };
 
 
@@ -978,8 +983,9 @@ namespace ChedVX.UI
         {
             var shortcutItemBuilder = new ToolStripButtonBuilder(ShortcutManager);
 
-            var tapButton = shortcutItemBuilder.BuildItem(Commands.SelectTap, "TAP", Resources.TapIcon);
-            var exTapButton = shortcutItemBuilder.BuildItem(Commands.SelectExTap, "ExTAP", Resources.ExTapIcon);
+            /*
+            var tapButton = shortcutItemBuilder.BuildItem(Commands.SelectBTs, "TAP", Resources.TapIcon);
+            var exTapButton = shortcutItemBuilder.BuildItem(Commands.SelectFXs, "ExTAP", Resources.ExTapIcon);
             var holdButton = shortcutItemBuilder.BuildItem(Commands.SelectHold, "HOLD", Resources.HoldIcon);
             var slideButton = shortcutItemBuilder.BuildItem(Commands.SelectSlide, "SLIDE", Resources.SlideIcon);
             var slideStepButton = shortcutItemBuilder.BuildItem(Commands.SelectSlideStep, MainFormStrings.SlideStep, Resources.SlideStepIcon);
@@ -1074,12 +1080,13 @@ namespace ChedVX.UI
                         break;
                 }
             };
-
+            */
             return new ToolStrip(new ToolStripItem[]
             {
-                tapButton, exTapButton, holdButton, slideButton, slideStepButton, airKind, airActionButton, flickButton, damageButton,
-                quantizeComboBox
+                // tapButton, exTapButton, holdButton, slideButton, slideStepButton, airKind, airActionButton, flickButton, damageButton,
+                // quantizeComboBox
             });
+
         }
     }
 }

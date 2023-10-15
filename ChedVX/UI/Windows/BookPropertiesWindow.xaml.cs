@@ -126,7 +126,7 @@ namespace ChedVX.UI.Windows
         {
             Title = ScoreBook.Title;
             Artist = ScoreBook.ArtistName;
-            NotesDesigner = ScoreBook.NotesDesignerName;
+            NotesDesigner = ScoreBook.Effector;
 
             MusicSourcePath = MusicSource.FilePath;
             MusicSourceLatency = MusicSource.Latency;
@@ -138,7 +138,7 @@ namespace ChedVX.UI.Windows
         {
             ScoreBook.Title = Title;
             ScoreBook.ArtistName = Artist;
-            ScoreBook.NotesDesignerName = NotesDesigner;
+            ScoreBook.Effector = NotesDesigner;
 
             MusicSource.FilePath = MusicSourcePath;
             MusicSource.Latency = MusicSourceLatency;

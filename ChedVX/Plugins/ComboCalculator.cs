@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ChedVX.Core;
+using ChedVX.Core.Notes;
+using ChedVX.Localization;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,10 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Documents;
 using System.Windows.Forms;
-
-using ChedVX.Core;
-using ChedVX.Core.Notes;
-using ChedVX.Localization;
 
 namespace ChedVX.Plugins
 {
@@ -67,7 +66,7 @@ namespace ChedVX.Plugins
                 return tickList;
             }
 
-            foreach (var hold in Holds)        
+            foreach (var hold in Holds)
             {
                 var tickList = new HashSet<int>(calcComboTicks(hold.StartTick, hold.Duration));
                 combo.Long += tickList.Count;

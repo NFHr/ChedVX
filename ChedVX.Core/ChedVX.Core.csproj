@@ -65,7 +65,6 @@
   <ItemGroup>
     <Compile Include="BarIndexCalculator.cs" />
     <Compile Include="Constants.cs" />
-    <Compile Include="Easing\EasingBase.cs" />
     <Compile Include="Effects\FXEffect.cs" />
     <Compile Include="Effects\KeySoundEffect.cs" />
     <Compile Include="Effects\LaserEffect.cs" />
@@ -103,7 +102,7 @@
     <Compile Include="UI\SelectionRange.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Ched.Core.nuspec" />
+    <None Include="ChedVX.Core.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

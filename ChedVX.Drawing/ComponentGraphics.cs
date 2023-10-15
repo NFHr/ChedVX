@@ -36,10 +36,9 @@ namespace ChedVX.Drawing
             {
                 using (var pen = new Pen(brush, borderWidth))
                 {
-                    using (var path = rect.ToRoundedPath(rect.Height * 0.3f))
-                    {
-                        g.DrawPath(pen, path);
-                    }
+
+                    g.DrawRectangle(pen, rect.X, rect.Y, rect.Width, rect.Height);
+
                 }
             }
         }

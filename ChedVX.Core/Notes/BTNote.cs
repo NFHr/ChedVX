@@ -12,27 +12,17 @@ namespace ChedVX.Core.Notes
     public class BTNote : NoteBase
     {
         [Newtonsoft.Json.JsonProperty]
-        private EffectBase hitFx;
-        [Newtonsoft.Json.JsonProperty]
-        private EffectBase holdFx;
+        private EffectBase effect;
 
         /// <summary>
         /// Hit Fx of the note.
         /// </summary>
-        public EffectBase HitFx
+        public EffectBase Effect
         {
-            get => hitFx;
-            set => hitFx = value;
+            get => effect;
+            set => effect = value;
         }
 
-        /// <summary>
-        /// Hold Fx of the note.
-        /// </summary>
-        public EffectBase HoldFx
-        {
-            get => holdFx;
-            set => holdFx = value;
-        }
 
         /// <summary>
         /// Track ID of the note.
@@ -63,7 +53,7 @@ namespace ChedVX.Core.Notes
             }
         }
 
-        public bool HasFX => hitFx is EffectBase;
+        public bool HasEffect => effect is EffectBase;
 
     }
 }

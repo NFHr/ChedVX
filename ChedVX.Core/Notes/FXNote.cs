@@ -36,11 +36,11 @@ namespace ChedVX.Core.Notes
             {
                 laneIndex = value switch
                 {
-                    0 => 0,
                     1 => 0,
-                    2 => 1,
+                    2 => 0,
                     3 => 1,
-                    _ => throw new ArgumentOutOfRangeException("LaneIndex", "Index of lane out of range."),
+                    4 => 1,
+                    _ => 2
                 };
             }
         }

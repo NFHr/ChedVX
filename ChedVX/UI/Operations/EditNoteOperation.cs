@@ -23,14 +23,14 @@ namespace ChedVX.UI.Operations
         public abstract void Undo();
     }
 
-    public class MoveNoteOperation : EditNoteOperation
+    public class MoveNoteTickOperation : EditNoteOperation
     {
-        public override string Description { get { return "Move Notes"; } }
+        public override string Description { get { return "Move Notes' tick"; } }
 
         protected NotePosition BeforePosition { get; }
         protected NotePosition AfterPosition { get; }
 
-        public MoveNoteOperation(NoteBase note, NotePosition before, NotePosition after) : base(note)
+        public MoveNoteTickOperation(NoteBase note, NotePosition before, NotePosition after) : base(note)
         {
             BeforePosition = before;
             AfterPosition = after;
@@ -38,37 +38,33 @@ namespace ChedVX.UI.Operations
 
         public override void Redo()
         {
-            Note.StartTick = AfterPosition.Tick;
-            Note.LaneIndex = AfterPosition.LaneIndex;
+            Note.StartTick = AfterPosition.StartTick;
         }
 
         public override void Undo()
         {
-            Note.StartTick = BeforePosition.Tick;
-            Note.LaneIndex = BeforePosition.LaneIndex;
+            Note.StartTick = BeforePosition.StartTick;
         }
 
         public struct NotePosition
         {
-            public int Tick { get; }
-            public int LaneIndex { get; }
+            public int StartTick { get; }
 
-            public NotePosition(int tick, int laneIndex)
+            public NotePosition(int tick)
             {
-                Tick = tick;
-                LaneIndex = laneIndex;
+                StartTick = tick;
             }
 
             public override bool Equals(object obj)
             {
                 if (obj == null || !(obj is NotePosition)) return false;
                 NotePosition other = (NotePosition)obj;
-                return Tick == other.Tick && LaneIndex == other.LaneIndex;
+                return StartTick == other.StartTick;
             }
 
             public override int GetHashCode()
             {
-                return Tick ^ LaneIndex;
+                return StartTick;
             }
 
             public static bool operator ==(NotePosition a, NotePosition b)
@@ -83,7 +79,7 @@ namespace ChedVX.UI.Operations
         }
     }
 
-    public class ChangeDurationOperation : IOperation
+    public class ChangeDurationOnlyOperation : IOperation
     {
         public string Description { get { return "Change FX/BT Long Length"; } }
 
@@ -91,7 +87,7 @@ namespace ChedVX.UI.Operations
         protected int BeforeDuration { get; }
         protected int AfterDuration { get; }
 
-        public ChangeDurationOperation(NoteBase note, int beforeDuration, int afterDuration)
+        public ChangeDurationOnlyOperation(NoteBase note, int beforeDuration, int afterDuration)
         {
             Note = note;
             BeforeDuration = beforeDuration;
