@@ -24,23 +24,35 @@ namespace ChedVX.UI.Shortcuts
         public static string Copy => "editor.action.clipboardCopy";
         public static string Paste => "editor.action.clipboardPaste";
         public static string PasteFlip => "editor.action.clipboardPasteFlip";
+        public static string RemoveSelectedNotes => "editor.action.removeSelectedNotes";
 
         public static string SelectAll => "editor.action.selectAll";
         public static string SelectToBegin => "editor.action.selectToBegin";
         public static string SelectToEnd => "editor.action.selectToEnd";
+        public static string Deselect => "editor.action.DeSelect";
 
         public static string FlipSelectedNotes => "editor.action.flipSelectedNotes";
-        public static string RemoveSelectedNotes => "editor.action.removeSelectedNotes";
-        public static string RemoveSelectedEvents => "editor.action.removeSelectedEvents";
+        public static string SwitchLaserColor => "editor.action.SwitchLaserColor";
+
+        public static string CopyLaneTiltEvents => "editor.action.CopyLaneTiltEvents";
+        public static string RemoveLaneTiltEvents => "editor.action.RemoveLaneTiltEvents";
+
+        public static string CopyLaneZoomEvents => "editor.action.CopyLaneZoomEvents";
+        public static string RemoveLaneZoomEvents => "editor.action.RemoveLaneZoomEvents";
+
+        public static string RemoveSelectedEvents => "editor.action.RemoveSelectedEvents";
+
+        public static string RemoveSelectedMeasurement => "editor.action.RemoveSelectedMeasurement";
+        public static string AddBlankMeasurement => "editor.action.AddBlankMeasurement";
+
+        public static string RemoveAllComment => "editor.action.RemoveAllComment";
+
+        public static string ClearChartContent => "editor.action.ClearChartContent";
 
         public static string SwitchScorePreviewMode => "editor.view.switchScorePreviewMode";
 
-        public static string WidenLaneDistance => "editor.view.widenLaneWidth";
-        public static string NarrowLaneDistance => "editor.view.narrowLaneWidth";
-
-        public static string WidenNoteDistance => "editor.view.widenLaneWidth";
-        public static string NarrowNoteDistance => "editor.view.narrowLaneWidth";
-
+        public static string WidenLaneSpacing => "editor.view.widenLaneSpacing";
+        public static string NarrowLaneSpacing => "editor.view.narrowLaneSpacing";
         public static string InsertBpmChange => "editor.action.insertBpmChange";
         public static string InsertTimeSignatureChange => "editor.action.insertTimeSignatureChange";
         public static string InsertHighSpeedChange => "editor.action.insertHighSpeedChange";

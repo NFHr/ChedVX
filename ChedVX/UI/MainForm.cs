@@ -25,7 +25,7 @@ namespace ChedVX.UI
         private event EventHandler PreviewModeChanged;
 
         private readonly string UserShortcutKeySourcePath = "keybindings.json";
-        private readonly string FileExtension = ".chs";
+        private readonly string FileExtension = ".vhs";
         private string FileTypeFilter => FileFilterStrings.ChedFilter + string.Format("({0})|{1}", "*" + FileExtension, "*" + FileExtension);
 
         private bool isPreviewMode;
@@ -62,8 +62,8 @@ namespace ChedVX.UI
             }
         }
 
-        private bool CanWidenLaneWidth => !IsPreviewMode && NoteView.UnitLaneWidth < 24;
-        private bool CanNarrowLaneWidth => !IsPreviewMode && NoteView.UnitLaneWidth > 12;
+        private bool CanWidenLaneSpacing => !IsPreviewMode && NoteView.UnitLaneWidth < 24;
+        private bool CanNarrowLaneSpacing => !IsPreviewMode && NoteView.UnitLaneWidth > 12;
         private bool CanZoomIn => !IsPreviewMode && NoteView.UnitBeatHeight < 960;
         private bool CanZoomOut => !IsPreviewMode && NoteView.UnitBeatHeight > 30;
         private bool CanEdit => !IsPreviewMode && !PreviewManager.Playing;
@@ -187,13 +187,13 @@ namespace ChedVX.UI
             {
                 this.MainMenuStrip = CreateMainMenu(NoteView);
                 this.Controls.Add(NoteView);
-                this.Controls.Add(NoteViewScrollBar);
+                //this.Controls.Add(NoteViewScrollBar);
                 this.Controls.Add(CreateNewNoteTypeToolStrip(NoteView));
                 this.Controls.Add(CreateMainToolStrip(NoteView));
                 this.Controls.Add(MainMenuStrip);
             }
 
-            NoteView.NewNoteType = NoteType.FXChip;
+            NoteView.NewNoteType = NoteType.BTChip;
             NoteView.EditMode = EditMode.Edit;
 
             LoadEmptyBook();
@@ -446,7 +446,7 @@ namespace ChedVX.UI
 
         protected void SetText(string filePath)
         {
-            Text = "Ched" + (string.IsNullOrEmpty(filePath) ? "" : " - " + Path.GetFileName(filePath)) + (OperationManager.IsChanged ? " *" : "");
+            Text = "ChedVX" + (string.IsNullOrEmpty(filePath) ? "" : " - " + Path.GetFileName(filePath)) + (OperationManager.IsChanged ? " *" : "");
         }
 
         private void UpdateThumbHeight()
@@ -753,8 +753,9 @@ namespace ChedVX.UI
             {
                 shortcutItemBuilder.BuildItem(Commands.NewFile, MainFormStrings.NewFile + "(&N)"),
                 shortcutItemBuilder.BuildItem(Commands.OpenFile, MainFormStrings.OpenFile + "(&O)"),
+                new ToolStripSeparator(),
                 shortcutItemBuilder.BuildItem(Commands.Save, MainFormStrings.SaveFile + "(&S)"),
-                shortcutItemBuilder.BuildItem(Commands.SaveAs, MainFormStrings.SaveAs + "(&A)"),
+                shortcutItemBuilder.BuildItem(Commands.SaveAs, MainFormStrings.SaveAs + "(&D)"),
                 new ToolStripSeparator(),
                 new ToolStripMenuItem(MainFormStrings.Import, null, importPluginItems) { Enabled = importPluginItems.Length > 0 },
                 new ToolStripMenuItem(MainFormStrings.Export, null, exportPluginItems) { Enabled = exportPluginItems.Length > 0 },
@@ -776,27 +777,52 @@ namespace ChedVX.UI
             var copyItem = shortcutItemBuilder.BuildItem(Commands.Copy, MainFormStrings.Copy);
             var pasteItem = shortcutItemBuilder.BuildItem(Commands.Paste, MainFormStrings.Paste);
             var pasteFlippedItem = shortcutItemBuilder.BuildItem(Commands.PasteFlip, MainFormStrings.PasteFlipped);
+            var removeSelectedNotesItem = shortcutItemBuilder.BuildItem(Commands.RemoveSelectedNotes, MainFormStrings.RemoveSelectedNotes);
 
             var selectAllItem = shortcutItemBuilder.BuildItem(Commands.SelectAll, MainFormStrings.SelectAll);
             var selectToEndItem = shortcutItemBuilder.BuildItem(Commands.SelectToEnd, MainFormStrings.SelectToEnd);
             var selectoToBeginningItem = shortcutItemBuilder.BuildItem(Commands.SelectToBegin, MainFormStrings.SelectToBeginning);
+            var deselect = shortcutItemBuilder.BuildItem(Commands.Deselect, MainFormStrings.Deselect);
 
             var flipSelectedNotesItem = shortcutItemBuilder.BuildItem(Commands.FlipSelectedNotes, MainFormStrings.FlipSelectedNotes);
-            var removeSelectedNotesItem = shortcutItemBuilder.BuildItem(Commands.RemoveSelectedNotes, MainFormStrings.RemoveSelectedNotes);
-            var removeEventsItem = shortcutItemBuilder.BuildItem(Commands.RemoveSelectedEvents, MainFormStrings.RemoveEvents);
+            var switchColorItem = shortcutItemBuilder.BuildItem(Commands.SwitchLaserColor, MainFormStrings.SwitchLaserColor);
 
-            /*
-        var insertAirWithAirActionItem = new ToolStripMenuItem(MainFormStrings.InsertAirWithAirAction, null, (s, e) =>
-        {
-            var item = s as ToolStripMenuItem;
-            item.Checked = !item.Checked;
-            NoteView.InsertAirWithAirAction = item.Checked;
-            ApplicationSettings.Default.InsertAirWithAirAction = item.Checked;
-        })
-        {
-            Checked = ApplicationSettings.Default.InsertAirWithAirAction
-        };
+            var copyLaneTiltItems = shortcutItemBuilder.BuildItem(Commands.CopyLaneTiltEvents, MainFormStrings.CopyLaneTiltEvents);
+            var removeLaneTiltItem = shortcutItemBuilder.BuildItem(Commands.RemoveLaneTiltEvents, MainFormStrings.RemoveLaneTiltEvents);
+
+            var copyLaneZoomItems = shortcutItemBuilder.BuildItem(Commands.CopyLaneZoomEvents, MainFormStrings.CopyLaneZoomEvents);
+            var removeLaneZoomItem = shortcutItemBuilder.BuildItem(Commands.RemoveLaneZoomEvents, MainFormStrings.RemoveLaneZoomEvents);
+
+            var removeSelectedEvents = shortcutItemBuilder.BuildItem(Commands.RemoveSelectedEvents, MainFormStrings.RemoveSelectedEvents);
+
+            var removeSelectedMeasurement = shortcutItemBuilder.BuildItem(Commands.RemoveSelectedMeasurement, MainFormStrings.RemoveSelectedMeasurement);
+            var addBlankMeasure = shortcutItemBuilder.BuildItem(Commands.AddBlankMeasurement, MainFormStrings.AddBlankMeasurement);
+
+            var removeAllComment = shortcutItemBuilder.BuildItem(Commands.RemoveAllComment, MainFormStrings.RemoveAllComments);
+
+            var clearChartContent = shortcutItemBuilder.BuildItem(Commands.ClearChartContent, MainFormStrings.ClearChartContent);
+
+            var eventOperationItems = new ToolStripItem[]
+            {
+                copyLaneTiltItems, removeLaneTiltItem, new ToolStripSeparator(),
+                copyLaneZoomItems, removeLaneZoomItem, new ToolStripSeparator(),
+                removeSelectedEvents
+            };
+
+            /* Example of Clicked
+            var insertAirWithAirActionItem = new ToolStripMenuItem(MainFormStrings.InsertAirWithAirAction, null, (s, e) =>
+            {
+                var item = s as ToolStripMenuItem;
+                item.Checked = !item.Checked;
+                NoteView.InsertAirWithAirAction = item.Checked;
+                ApplicationSettings.Default.InsertAirWithAirAction = item.Checked;
+            })
+            {
+                Checked = ApplicationSettings.Default.InsertAirWithAirAction
+            };
             */
+
+
             var pluginItems = PluginManager.ScorePlugins.Select(p => new ToolStripMenuItem(p.DisplayName, null, (s, e) =>
             {
                 CommitChanges();
@@ -820,39 +846,45 @@ namespace ChedVX.UI
                     MessageBox.Show(this, ErrorStrings.PluginException, Program.ApplicationName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             })).ToArray();
+
             var pluginItem = new ToolStripMenuItem(MainFormStrings.Plugin, null, pluginItems) { Enabled = pluginItems.Length > 0 };
 
             var editMenuItems = new ToolStripItem[]
             {
                 undoItem, redoItem, new ToolStripSeparator(),
-                cutItem, copyItem, pasteItem, pasteFlippedItem, new ToolStripSeparator(),
-                selectAllItem, selectToEndItem, selectoToBeginningItem, new ToolStripSeparator(),
-                flipSelectedNotesItem, removeSelectedNotesItem, removeEventsItem, new ToolStripSeparator(),
-                // insertAirWithAirActionItem, new ToolStripSeparator(),
+                cutItem, copyItem, pasteItem, pasteFlippedItem, removeSelectedNotesItem, new ToolStripSeparator(),
+                selectAllItem, selectToEndItem, selectoToBeginningItem, deselect, new ToolStripSeparator(),
+                flipSelectedNotesItem, switchColorItem, new ToolStripSeparator(),
+                new ToolStripMenuItem(MainFormStrings.EventOperation, null, eventOperationItems) { }, new ToolStripSeparator(),
+                removeSelectedMeasurement, addBlankMeasure, new ToolStripSeparator(),
+                removeAllComment, new ToolStripSeparator(),
+                clearChartContent, new ToolStripSeparator(),
                 pluginItem
             };
 
+            
+            
             var viewModeItem = shortcutItemBuilder.BuildItem(Commands.SwitchScorePreviewMode, MainFormStrings.ScorePreview);
             PreviewModeChanged += (s, e) => viewModeItem.Checked = IsPreviewMode;
-
-
-            // var widenLaneWidthMenuItem = shortcutItemBuilder.BuildItem(Commands.WidenLaneWidth, MainFormStrings.WidenLaneWidth);
-            // var narrowLaneWidthMenuItem = shortcutItemBuilder.BuildItem(Commands.NarrowLaneWidth, MainFormStrings.NarrowLaneWidth);
-
+            
+            var widenLineSpacingMenuItem = shortcutItemBuilder.BuildItem(Commands.WidenLaneSpacing, MainFormStrings.WidenLaneSpacing);
+            var narrowLineSpacingMenuItem = shortcutItemBuilder.BuildItem(Commands.NarrowLaneSpacing, MainFormStrings.NarrowLaneSpacing);
             NoteView.UnitLaneWidthChanged += (s, e) =>
             {
-                // widenLaneWidthMenuItem.Enabled = CanWidenLaneWidth;
-                // narrowLaneWidthMenuItem.Enabled = CanNarrowLaneWidth;
+                widenLineSpacingMenuItem.Enabled = CanWidenLaneSpacing;
+                narrowLineSpacingMenuItem.Enabled = CanNarrowLaneSpacing;
             };
-
+            
+            
+            
             var viewMenuItems = new ToolStripItem[]
             {
                 viewModeItem,
                 new ToolStripSeparator(),
-                // widenLaneWidthMenuItem, narrowLaneWidthMenuItem
+                widenLineSpacingMenuItem, narrowLineSpacingMenuItem
             };
 
-
+            // TODO: Add Event type
             var insertBpmItem = shortcutItemBuilder.BuildItem(Commands.InsertBpmChange, "BPM");
             var insertHighSpeedItem = shortcutItemBuilder.BuildItem(Commands.InsertHighSpeedChange, MainFormStrings.HighSpeed);
             var insertTimeSignatureItem = shortcutItemBuilder.BuildItem(Commands.InsertTimeSignatureChange, MainFormStrings.TimeSignature);

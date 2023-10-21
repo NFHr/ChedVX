@@ -118,62 +118,62 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ExportComplete" xml:space="preserve">
-    <value>エクスポートが完了しました。</value>
+    <value>The export completed successfully.</value>
   </data>
   <data name="ExportFailed" xml:space="preserve">
-    <value>エクスポートに失敗しました。</value>
+    <value>The export failed.</value>
   </data>
   <data name="FileDiscardConfirmation" xml:space="preserve">
-    <value>編集中のデータは破棄されますがよろしいですか？</value>
+    <value>Any unsaved work will be discarded. Continue?</value>
   </data>
   <data name="FileLoadError" xml:space="preserve">
-    <value>ファイルの読み込み中にエラーが発生しました。</value>
+    <value>An error occured while attempting to read the file.</value>
   </data>
   <data name="FileNotAccessible" xml:space="preserve">
-    <value>ファイルにアクセスできません。</value>
+    <value>The file is not accessible.</value>
   </data>
   <data name="FileNotCompatible" xml:space="preserve">
-    <value>現在のバージョンでは開けないファイルです。</value>
+    <value>The file is not compatible with the current version.</value>
   </data>
   <data name="FileUpgradeNeeded" xml:space="preserve">
-    <value>古いバージョンで作成されたファイルです。
-バージョンアップしてよろしいですか？
-(以前のバージョンでは開けなくなります。)</value>
+    <value>The file was created in an older version of the software.
+Select "Yes" to upgrade this file.
+(You will NOT be able to use this file on older versions.)</value>
   </data>
   <data name="ImportComplete" xml:space="preserve">
-    <value>インポートが完了しました。</value>
+    <value>The import completed successfully.</value>
   </data>
   <data name="ImportFailed" xml:space="preserve">
-    <value>インポートに失敗しました。</value>
+    <value>The import failed.</value>
   </data>
   <data name="InvalidTimeSignature" xml:space="preserve">
-    <value>拍子定義が無効です。イベントが小節の先頭に配置されていることを確認してください。(場所: 第{0}拍付近)</value>
+    <value>The definition of time signature is invalid. Make sure that the event is aligned at beginning of the bar. (beat at {0})</value>
   </data>
   <data name="MusicSourceNull" xml:space="preserve">
-    <value>譜面プロパティから音源ファイルを指定してください。</value>
+    <value>Please select an audio file in the Score Property.</value>
   </data>
   <data name="NotExported" xml:space="preserve">
-    <value>エクスポートが実行されていません。</value>
+    <value>You can re-export after the first export.</value>
   </data>
   <data name="OutputPathRequired" xml:space="preserve">
-    <value>出力先を指定してください。</value>
+    <value>Please select an output path.</value>
   </data>
   <data name="PluginException" xml:space="preserve">
-    <value>プラグインの実行中にエラーが発生しました。</value>
+    <value>An exception occured while executing the plugin.</value>
   </data>
   <data name="PluginLoadError" xml:space="preserve">
-    <value>以下のプラグインの読み込みに失敗しました。DLLファイルがブロックされている可能性があります。</value>
+    <value>The following plugin(s) is (are) not loaded. It may be occured due to the dll file(s) is (are) blocked.</value>
   </data>
   <data name="PluginNotSupported" xml:space="preserve">
-    <value>以下のプラグインは現在のバージョンに対応していない可能性があります。プラグイン機能は無効化されます。</value>
+    <value>The following plugin(s) may not be supported in this version. All plugins will be disabled.</value>
   </data>
   <data name="PreviewException" xml:space="preserve">
-    <value>プレビュー中にエラーが発生しました。</value>
+    <value>An error occured while previewing.</value>
   </data>
   <data name="PreviewNotSupported" xml:space="preserve">
-    <value>簡易プレビューが利用できない環境です。</value>
+    <value>Preview cannot be used.</value>
   </data>
   <data name="SourceFileNotFound" xml:space="preserve">
-    <value>音源ファイルが見つかりません。</value>
+    <value>The audio file was not found.</value>
   </data>
 </root>

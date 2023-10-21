@@ -118,228 +118,264 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AbortAtLastNote" xml:space="preserve">
-    <value>最終ノートで停止</value>
+    <value>Stop At Last Note</value>
   </data>
   <data name="BookProperty" xml:space="preserve">
-    <value>譜面プロパティ</value>
+    <value>Chart Properties...</value>
   </data>
   <data name="Copy" xml:space="preserve">
-    <value>コピー</value>
+    <value>Copy</value>
   </data>
   <data name="Cut" xml:space="preserve">
-    <value>切り取り</value>
+    <value>Cut</value>
   </data>
   <data name="DeleteEvent" xml:space="preserve">
-    <value>イベント削除</value>
+    <value>Delete Event</value>
   </data>
   <data name="EditMenu" xml:space="preserve">
-    <value>編集(&amp;E)</value>
+    <value>Edit(&amp;E)</value>
   </data>
   <data name="Eraser" xml:space="preserve">
-    <value>消しゴム</value>
+    <value>Eraser</value>
   </data>
   <data name="Exit" xml:space="preserve">
-    <value>終了</value>
+    <value>Exit</value>
   </data>
   <data name="Export" xml:space="preserve">
-    <value>エクスポート</value>
+    <value>Export</value>
   </data>
   <data name="FileMenu" xml:space="preserve">
-    <value>ファイル(&amp;F)</value>
+    <value>File(&amp;F)</value>
   </data>
   <data name="FlipSelectedNotes" xml:space="preserve">
-    <value>選択範囲内ノーツを反転</value>
+    <value>Reverse selected notes</value>
   </data>
   <data name="Help" xml:space="preserve">
-    <value>ヘルプを開く</value>
+    <value>Help</value>
   </data>
   <data name="HelpMenu" xml:space="preserve">
-    <value>ヘルプ(&amp;H)</value>
+    <value>Help(&amp;H)</value>
   </data>
   <data name="HighSpeed" xml:space="preserve">
-    <value>ハイスピード</value>
+    <value>High Speed Selection</value>
   </data>
   <data name="InsertMenu" xml:space="preserve">
-    <value>挿入(&amp;I)</value>
+    <value>Insert(&amp;I)</value>
   </data>
   <data name="NewFile" xml:space="preserve">
-    <value>新規作成</value>
+    <value>New</value>
   </data>
   <data name="OpenFile" xml:space="preserve">
-    <value>開く</value>
+    <value>Open</value>
   </data>
   <data name="Paste" xml:space="preserve">
-    <value>貼り付け</value>
+    <value>Paste</value>
   </data>
   <data name="PasteFlipped" xml:space="preserve">
-    <value>反転貼り付け</value>
+    <value>Paste Flipped</value>
   </data>
   <data name="Pen" xml:space="preserve">
-    <value>ペン</value>
+    <value>Pen</value>
   </data>
   <data name="Play" xml:space="preserve">
-    <value>再生/停止</value>
+    <value>Play / Stop</value>
   </data>
   <data name="PlayMenu" xml:space="preserve">
-    <value>再生(&amp;P)</value>
+    <value>Play(&amp;P)</value>
   </data>
   <data name="Plugin" xml:space="preserve">
-    <value>プラグイン</value>
+    <value>Plugin</value>
   </data>
   <data name="Redo" xml:space="preserve">
-    <value>やり直す</value>
+    <value>Redo</value>
   </data>
   <data name="RemoveEvents" xml:space="preserve">
-    <value>選択範囲内イベントを削除</value>
+    <value>Remove Selected Events</value>
   </data>
   <data name="RemoveSelectedNotes" xml:space="preserve">
-    <value>選択範囲内ノーツを削除</value>
+    <value>Delete</value>
   </data>
   <data name="SaveAs" xml:space="preserve">
-    <value>名前を付けて保存</value>
+    <value>Save As</value>
   </data>
   <data name="SaveFile" xml:space="preserve">
-    <value>上書き保存</value>
+    <value>Save</value>
   </data>
   <data name="ScorePreview" xml:space="preserve">
-    <value>譜面プレビュー</value>
+    <value>Score Preview</value>
   </data>
   <data name="Selection" xml:space="preserve">
-    <value>選択</value>
+    <value>Selection</value>
   </data>
   <data name="Stop" xml:space="preserve">
-    <value>停止</value>
+    <value>Stop</value>
   </data>
   <data name="TimeSignature" xml:space="preserve">
-    <value>拍子</value>
+    <value>Time Signature Selection</value>
   </data>
   <data name="Undo" xml:space="preserve">
-    <value>元に戻す</value>
+    <value>Undo</value>
   </data>
   <data name="VersionInfo" xml:space="preserve">
-    <value>バージョン情報</value>
+    <value>Version Info</value>
   </data>
   <data name="ViewMenu" xml:space="preserve">
-    <value>表示(&amp;V)</value>
+    <value>View(&amp;V)</value>
   </data>
   <data name="ZoomIn" xml:space="preserve">
-    <value>拡大</value>
+    <value>Zoom In</value>
   </data>
   <data name="ZoomOut" xml:space="preserve">
-    <value>縮小</value>
+    <value>Zoom Out</value>
   </data>
   <data name="AirDown" xml:space="preserve">
-    <value>振り下げAIR</value>
+    <value>AIR DOWN</value>
   </data>
   <data name="AirLeftDown" xml:space="preserve">
-    <value>振り下げ左AIR</value>
+    <value>AIR DOWN LEFT</value>
   </data>
   <data name="AirLeftUp" xml:space="preserve">
-    <value>振り上げ左AIR</value>
+    <value>AIR UP LEFT</value>
   </data>
   <data name="AirRightDown" xml:space="preserve">
-    <value>振り下げ右AIR</value>
+    <value>AIR DOWN RIGHT</value>
   </data>
   <data name="AirRightUp" xml:space="preserve">
-    <value>振り上げ右AIR</value>
+    <value>AIR UP RIGHT</value>
   </data>
   <data name="AirUp" xml:space="preserve">
-    <value>振り上げAIR</value>
+    <value>AIR UP</value>
   </data>
   <data name="Custom" xml:space="preserve">
-    <value>カスタム</value>
+    <value>Custom</value>
   </data>
   <data name="Division" xml:space="preserve">
-    <value>分</value>
+    <value>Division</value>
   </data>
   <data name="SlideStep" xml:space="preserve">
-    <value>SLIDE(中継点)</value>
+    <value>SLIDE (STEP)</value>
   </data>
   <data name="InsertAirWithAirAction" xml:space="preserve">
-    <value>AIR-ACTIONとAIRを同時に追加する</value>
+    <value>Add AIR with AIR-ACTION</value>
   </data>
   <data name="Import" xml:space="preserve">
-    <value>インポート</value>
-  </data>
-  <data name="NarrowLaneWidth" xml:space="preserve">
-    <value>レーン幅を狭める</value>
-  </data>
-  <data name="WidenLaneWidth" xml:space="preserve">
-    <value>レーン幅を広げる</value>
+    <value>Import</value>
   </data>
   <data name="SelectAll" xml:space="preserve">
-    <value>すべて選択</value>
+    <value>Select All</value>
   </data>
   <data name="SelectToBeginning" xml:space="preserve">
-    <value>最初から現在位置まで選択</value>
+    <value>Select to Beginning</value>
   </data>
   <data name="SelectToEnd" xml:space="preserve">
-    <value>現在位置から最後まで選択</value>
+    <value>Select to End</value>
   </data>
   <data name="Artist" xml:space="preserve">
-    <value>アーティスト</value>
+    <value>Artist</value>
   </data>
   <data name="BasicInformation" xml:space="preserve">
-    <value>基本情報</value>
+    <value>Basic Information</value>
   </data>
   <data name="Browse" xml:space="preserve">
-    <value>参照</value>
+    <value>Browse</value>
   </data>
   <data name="Cancel" xml:space="preserve">
-    <value>キャンセル</value>
+    <value>Cancel</value>
   </data>
   <data name="MusicInformation" xml:space="preserve">
-    <value>音源情報</value>
+    <value>Music Information</value>
   </data>
   <data name="NotesDesigner" xml:space="preserve">
-    <value>ノーツデザイナー</value>
+    <value>Note Designer</value>
   </data>
   <data name="Offset" xml:space="preserve">
-    <value>オフセット</value>
+    <value>Offset</value>
   </data>
   <data name="SoundFile" xml:space="preserve">
-    <value>音源ファイル</value>
+    <value>Sound File</value>
   </data>
   <data name="Title" xml:space="preserve">
-    <value>タイトル</value>
+    <value>Title</value>
   </data>
   <data name="AdditionalData" xml:space="preserve">
-    <value>自由記述欄</value>
+    <value>Additional Data</value>
   </data>
   <data name="Difficulty" xml:space="preserve">
-    <value>難易度</value>
+    <value>Difficulty</value>
   </data>
   <data name="JacketFile" xml:space="preserve">
-    <value>ジャケットファイル</value>
+    <value>Jacket File</value>
   </data>
   <data name="Level" xml:space="preserve">
-    <value>レベル</value>
+    <value>Level</value>
   </data>
   <data name="InsertSingleBlankAtBeginning" xml:space="preserve">
-    <value>先頭に1小節の空白を挿入する</value>
+    <value>Insert a single blank space at the beginning</value>
   </data>
   <data name="KeyboardShortcuts" xml:space="preserve">
-    <value>ショートカット設定</value>
+    <value>Keyboard Shortcuts</value>
   </data>
   <data name="Clear" xml:space="preserve">
-    <value>クリア</value>
+    <value>Clear</value>
   </data>
   <data name="Command" xml:space="preserve">
-    <value>コマンド</value>
+    <value>Command</value>
   </data>
   <data name="KeyCombination" xml:space="preserve">
-    <value>ショートカットキー</value>
+    <value>Key Combination</value>
   </data>
   <data name="ResetAll" xml:space="preserve">
-    <value>初期化</value>
+    <value>Reset All</value>
   </data>
   <data name="GuideVolume" xml:space="preserve">
-    <value>ガイド音音量(共通)</value>
+    <value>Guide Volume (Global)</value>
   </data>
   <data name="MusicVolume" xml:space="preserve">
-    <value>楽曲音量</value>
+    <value>Music Volume</value>
   </data>
   <data name="SlowDownPreview" xml:space="preserve">
-    <value>スロー再生</value>
+    <value>Slow Down Preview</value>
+  </data>
+  <data name="AddBlankMeasurement" xml:space="preserve">
+    <value>Insert a blank space at cursor</value>
+  </data>
+  <data name="ClearChartContent" xml:space="preserve">
+    <value>Clear chart contents...</value>
+  </data>
+  <data name="CopyLaneTiltEvents" xml:space="preserve">
+    <value>Copy selected lane tilt events</value>
+  </data>
+  <data name="CopyLaneZoomEvents" xml:space="preserve">
+    <value>Copy selected lane zoom events</value>
+  </data>
+  <data name="Deselect" xml:space="preserve">
+    <value>Deselect</value>
+  </data>
+  <data name="EventOperation" xml:space="preserve">
+    <value>Events</value>
+  </data>
+  <data name="RemoveAllComments" xml:space="preserve">
+    <value>Remove all comments</value>
+  </data>
+  <data name="RemoveLaneTiltEvents" xml:space="preserve">
+    <value>Remove selected lane tilt events</value>
+  </data>
+  <data name="RemoveLaneZoomEvents" xml:space="preserve">
+    <value>Remove selected lane zoom events</value>
+  </data>
+  <data name="RemoveSelectedEvents" xml:space="preserve">
+    <value>Remove selected events</value>
+  </data>
+  <data name="RemoveSelectedMeasurement" xml:space="preserve">
+    <value>Remove selected measures...</value>
+  </data>
+  <data name="SwitchLaserColor" xml:space="preserve">
+    <value>Switch color of selected LASER objects</value>
+  </data>
+  <data name="WidenLaneSpacing" xml:space="preserve">
+    <value>Increasing Spacing between lanes</value>
+  </data>
+  <data name="NarrowLaneSpacing" xml:space="preserve">
+    <value>Narrow spacing between lanes</value>
   </data>
 </root>

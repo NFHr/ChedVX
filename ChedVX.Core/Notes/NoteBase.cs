@@ -54,12 +54,6 @@ namespace ChedVX.Core.Notes
         public virtual int LaneIndex { get => laneIndex; set => laneIndex = value; }
 
         /// <summary>
-        /// Track ID of the note.
-        /// </summary>
-        public virtual Tracks TrackID { get; }
-
-
-        /// <summary>
         /// Return whether the note is a chip or slam (i.e. dutarion == 0)
         /// </summary>
         public bool IsChip => Duration == 0;

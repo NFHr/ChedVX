@@ -47,7 +47,8 @@ namespace ChedVX.UI
                     // Shouldn't be supported in edit mode
                     IObservable<MouseEventArgs> moveNoteHandler(NoteBase note)
                     {
-                        int beforeLaneIndex = (int)note.TrackID;
+                        
+                        int beforeLaneIndex = note.LaneIndex;
                         return mouseMove
                             .TakeUntil(mouseUp)
                             .Do(q =>

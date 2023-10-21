@@ -67,22 +67,6 @@ namespace ChedVX.Core.Notes
         }
 
         /// <summary>
-        /// Track ID of the note.
-        /// </summary>
-        public override Tracks TrackID
-        {
-            get
-            {
-                return LaneIndex switch
-                {
-                    0 => Tracks.LaserL,
-                    1 => Tracks.LaserR,
-                    _ => throw new ArgumentOutOfRangeException("Track", "No matchable Track ID for this lane index"),
-                };
-            }
-        }
-
-        /// <summary>
         /// Lane index of the note.
         /// </summary>
         public override int LaneIndex

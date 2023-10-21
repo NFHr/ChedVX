@@ -118,18 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ComboCalculator" xml:space="preserve">
-    <value>コンボ計算</value>
+    <value>Combo Calculator</value>
   </data>
   <data name="SlideKnitter" xml:space="preserve">
-    <value>スライド編み込み</value>
+    <value>Slide Wiggle Generator</value>
   </data>
   <data name="SlideMerger" xml:space="preserve">
-    <value>スライド結合</value>
+    <value>Slide Merger</value>
   </data>
   <data name="SlideReverser" xml:space="preserve">
-    <value>スライド時間軸反転</value>
+    <value>Slide Reverser</value>
   </data>
   <data name="SlideSplitter" xml:space="preserve">
-    <value>スライド分割</value>
+    <value>Slide Splitter</value>
   </data>
 </root>

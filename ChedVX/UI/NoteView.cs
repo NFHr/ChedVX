@@ -30,7 +30,6 @@ namespace ChedVX.UI
         public event EventHandler EditModeChanged;
         public event EventHandler SelectedRangeChanged;
         public event EventHandler NewNoteTypeChanged;
-        //public event EventHandler AirDirectionChanged;
         public event EventHandler DragScroll;
 
         private Color barLineColor = Color.FromArgb(160, 160, 160);
@@ -369,17 +368,15 @@ namespace ChedVX.UI
             Matrix matrix = baseMatrix.Clone();
             if (flipY)
             {
-                // 反転してY軸増加方向を時間軸に
                 matrix.Scale(1, -1);
             }
-            // ずれたコントロール高さ分を補正
-            matrix.Translate(0, ClientSize.Height - 1, MatrixOrder.Append);
-            // 水平方向に対して中央に寄せる
-            matrix.Translate((ClientSize.Width - LaneWidth) / 2, 0);
+            matrix.Translate(LaneWidth, ClientSize.Height - 1, MatrixOrder.Append);
 
             return matrix;
         }
-
+        
+        
+        
         private float GetYPositionFromTick(int tick)
         {
             return (tick - HeadTick) * UnitBeatHeight / UnitBeatTick;

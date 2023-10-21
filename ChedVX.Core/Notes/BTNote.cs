@@ -24,24 +24,6 @@ namespace ChedVX.Core.Notes
         }
 
 
-        /// <summary>
-        /// Track ID of the note.
-        /// </summary>
-        public override Tracks TrackID
-        {
-            get
-            {
-                return LaneIndex switch
-                {
-                    0 => Tracks.A,
-                    1 => Tracks.B,
-                    2 => Tracks.C,
-                    3 => Tracks.D,
-                    _ => throw new ArgumentOutOfRangeException("Track", "No matchable Track ID for this lane index"),
-                };
-            }
-        }
-
         public override int LaneIndex
         {
             get => laneIndex;
@@ -49,7 +31,7 @@ namespace ChedVX.Core.Notes
             set
             {
                 if (value < 0 || value > 4) throw new ArgumentOutOfRangeException("value", "value must be non-negative.");
-                LaneIndex = value;
+                laneIndex = value;
             }
         }
 

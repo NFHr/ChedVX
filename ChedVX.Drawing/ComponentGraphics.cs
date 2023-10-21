@@ -36,7 +36,6 @@ namespace ChedVX.Drawing
             {
                 using (var pen = new Pen(brush, borderWidth))
                 {
-
                     g.DrawRectangle(pen, rect.X, rect.Y, rect.Width, rect.Height);
 
                 }
